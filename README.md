@@ -1,0 +1,2 @@
+# ATSAML21_TC
+ATSAML21 TC module, blink LED without ASF in SEGGER IDE 4.12
