@@ -22,7 +22,7 @@ void main(void) {
 /* Initialize the SAM system */
 SystemInit();
 /* Set pin PB11 direction to Output */
-PORT->Group[1].DIRSET.reg |= PORT_PB11; 
+PORT->Group[1].DIRSET.reg = PORT_PB11; 
 /*enable NVIC interrupt for TC0 module*/
 NVIC_EnableIRQ(TC0_IRQn);
 /*Initialize the TC0*/
@@ -39,7 +39,7 @@ while(TC0->COUNT16.SYNCBUSY.bit.ENABLE == 1){} /*wait for TC0 synchro*/
    {
      if(!Timer1_Soft) {
               Timer1_Soft = 50 ; /*TC0 hardware x Timer1_soft = 10ms x 50 = 500 ms*/
-              PORT->Group[1].OUTTGL.reg |= PORT_PB11; /*Toggle pin PB11*/
+              PORT->Group[1].OUTTGL.reg = PORT_PB11; /*Toggle pin PB11*/
           }
    }
 
